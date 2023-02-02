@@ -1,0 +1,24 @@
+Medium :
+1.Retrieve the number of complaints received for each company and product, sorted by the number of complaints in descending order:
+SELECT Company, Product, COUNT(*) FROM Consumer_Complaints GROUP BY Company, Product ORDER BY COUNT(*) DESC 
+2.Retrieve the number of complaints received for each company and issue, sorted by the number of complaints in descending order:
+SELECT Company, Issue, COUNT(*) FROM Consumer_Complaints GROUP BY Company, Issue ORDER BY COUNT(*) DESC 
+3.Retrieve the number of complaints received for each product and issue, sorted by the number of complaints in descending order:
+SELECT Product, Issue, COUNT(*) FROM Consumer_Complaints GROUP BY Product, Issue ORDER BY COUNT(*) DESC 
+4.Retrieve the number of complaints received for each state and submitted method, sorted by the number of complaints in descending order:
+SELECT State, Submitted_via, COUNT(*) FROM Consumer_Complaints GROUP BY State, Submitted_via ORDER BY COUNT(*) DESC 
+5.Retrieve the number of complaints received for each company response and submitted method, sorted by the number of complaints in descending order:
+SELECT Company_response, Submitted_via, COUNT(*) FROM Consumer_Complaints GROUP BY Company_response, Submitted_via ORDER BY COUNT(*) DESC 
+
+Complex:
+1.Retrieve the number of complaints received for each company and product, where the complaint status is "Closed with explanation" or "Closed with non-monetary relief", sorted by the number of complaints in descending order:
+SELECT Company, Product, COUNT(*) FROM Consumer_Complaints WHERE Complaint_status IN ('Closed with explanation', 'Closed with non-monetary relief') GROUP BY Company, Product ORDER BY COUNT(*) DESC 
+2.Retrieve the number of complaints received for each company and issue, where the complaint was submitted via a certain method, sorted by the number of complaints in descending order:
+SELECT Company, Issue, COUNT(*) FROM Consumer_Complaints WHERE Submitted_via = '<specified method>' GROUP BY Company, Issue ORDER BY COUNT(*) DESC 
+3.Retrieve the number of complaints received for each product and issue, where the complaint status is "Closed with explanation" or "Closed with non-monetary relief" and the complaint was submitted via a certain method, sorted by the number of complaints in descending order:
+SELECT Product, Issue, COUNT(*) FROM Consumer_Complaints WHERE Complaint_status IN ('Closed with explanation', 'Closed with non-monetary relief') AND Submitted_via = '<specified method>' GROUP BY Product, Issue ORDER BY COUNT(*) DESC 
+4.Retrieve the number of complaints received for each company and product, where the complaint status is "Closed with explanation" or "Closed with non-monetary relief" and the complaint was submitted via a certain method, and the complaint was received in a certain year, sorted by the number of complaints in descending order:
+SELECT Company, Product, COUNT(*) FROM Consumer_Complaints WHERE Complaint_status IN ('Closed with explanation', 'Closed with non-monetary relief') AND Submitted_via = '<specified method>' AND YEAR(Date_received) = <specified year> GROUP BY Company, Product ORDER BY COUNT(*) DESC 
+5.Retrieve the number of complaints received for each company and product, where the complaint status is "Closed with explanation" or "Closed with non-monetary relief", the complaint was submitted via a certain method, and the complaint was received in a certain year, and the complaint was resolved within a certain number of days, sorted by the number of complaints in descending order:
+SELECT Company, Product, COUNT(*) FROM Consumer_Complaints WHERE Complaint_status IN ('Closed with explanation', 'Closed with non-monetary relief') AND Submitted_via = '<specified method>' AND YEAR(Date_received) = <specified year> AND DATEDIFF(Date_sent_to_company, Date_received) <= <specified number of days> GROUP BY Company, Product ORDER BY COUNT(*) DESC
+

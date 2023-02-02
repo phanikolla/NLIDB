@@ -1,0 +1,41 @@
+1.Retrieve the total number of complaints received:
+SELECT COUNT(*) FROM Consumer_Complaints 
+2.Retrieve the total number of complaints received for each product:
+SELECT Product, COUNT(*) FROM Consumer_Complaints GROUP BY Product 
+3.Retrieve the total number of complaints received for each state:
+SELECT State, COUNT(*) FROM Consumer_Complaints GROUP BY State 
+4.Retrieve the total number of complaints received for each company:
+SELECT Company, COUNT(*) FROM Consumer_Complaints GROUP BY Company 
+5.Retrieve the total number of complaints received for each issue:
+SELECT Issue, COUNT(*) FROM Consumer_Complaints GROUP BY Issue 
+6.Retrieve the total number of complaints received for each submitted method:
+SELECT Submitted_via, COUNT(*) FROM Consumer_Complaints GROUP BY Submitted_via 
+7.Retrieve the total number of timely responses:
+SELECT COUNT(*) FROM Consumer_Complaints WHERE Timely_response = 'Yes' 
+8.Retrieve the total number of complaints received for each product and issue:
+SELECT Product, Issue, COUNT(*) FROM Consumer_Complaints GROUP BY Product, Issue 
+9.Retrieve the total number of complaints received for each product and state:
+SELECT Product, State, COUNT(*) FROM Consumer_Complaints GROUP BY Product, State 
+10.Retrieve the total number of complaints received for each company and state:
+SELECT Company, State, COUNT(*) FROM Consumer_Complaints GROUP BY Company, State 
+11.Retrieve the total number of complaints received for each issue and state:
+SELECT Issue, State, COUNT(*) FROM Consumer_Complaints GROUP BY Issue, State 
+12.Retrieve the total number of complaints received for each issue and submitted method:
+SELECT Issue, Submitted_via, COUNT(*) FROM Consumer_Complaints GROUP BY Issue, Submitted_via 
+13.Retrieve the average number of days between the date received and the date sent to the company:
+SELECT AVG(DATEDIFF(Date_sent_to_company, Date_Received)) FROM Consumer_Complaints 
+14.Retrieve the average number of days between the date received and the date sent to the consumer:
+SELECT AVG(DATEDIFF(Date_sent_to_consumer, Date_Received)) FROM Consumer_Complaints 
+15.Retrieve the total number of complaints received for each company response:
+SELECT Company_response, COUNT(*) FROM Consumer_Complaints GROUP BY Company_response 
+16.Retrieve the total number of complaints received for each complaint status:
+SELECT Complaint_status, COUNT(*) FROM Consumer_Complaints GROUP BY Complaint_status
+17.Retrieve the total number of complaints received for each company response and state:
+SELECT Company_response, State, COUNT(*) FROM Consumer_Complaints GROUP BY Company_response, State 
+18.Retrieve the total number of complaints received for each complaint status and state:
+SELECT Complaint_status, State, COUNT(*) FROM Consumer_Complaints GROUP BY Complaint_status, State 
+19.Retrieve the total number of complaints received for each complaint status and submitted method:
+SELECT Complaint_status, Submitted_via, COUNT(*) FROM Consumer_Complaints GROUP BY Complaint_status, Submitted_via 
+20.Retrieve the total number of complaints received for each company, product, and issue:
+SELECT Company, Product, Issue, COUNT(*) FROM Consumer_Complaints GROUP BY Company, Product, Issue
+

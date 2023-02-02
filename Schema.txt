@@ -1,0 +1,50 @@
+Proposed Schema:
+
+Table: Consumer_Complaints
+
+Columns:
+- Complaint_ID (Primary Key)
+- Date_Received (Date)
+- Product (String)
+- Sub_product (String)
+- Issue (String)
+- Sub_issue (String)
+- Consumer_complaint_narrative (String)
+- Company (String)
+- State (String)
+- Zip_code (String)
+- Company_response (String)
+- Timely_response (Boolean)
+- Consumer_disputed (Boolean)
+- Date_sent_to_company (Date)
+- Company_response_to_consumer (String)
+- Complaint_status (String)
+- Consumer_consent_provided (Boolean)
+- Submitted_via (String)
+- Date_sent_to_consumer (Date)
+
+The schema includes columns for the complaint ID (primary key), the date the complaint was received, 
+the product and sub-product related to the complaint, 
+the issue and sub-issue, 
+the consumer's narrative of the complaint, 
+the company and the state related to the complaint, the zip code, the company's response, whether the response was timely, 
+whether the consumer disputed the response, the date the complaint was sent to the company, the company's response to the consumer, 
+the complaint's status, whether the consumer provided consent, the method by which the complaint was submitted, 
+and the date the complaint was sent to the consumer.
+
+
+1)
+list out top 10 to 20 queries
+features ? ex: complaint_status 
+
+2) 
+10 Q -->numeric (simple)
+next 5 ---> (moderate)
+15 to 20 --> (hard)
+
+3)
+distribute the above 3 approaches on different models
+
+Initlally go with one table --> gradually add tables and increase the complexity
+
+
