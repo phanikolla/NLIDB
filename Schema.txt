@@ -32,19 +32,3 @@ whether the consumer disputed the response, the date the complaint was sent to t
 the complaint's status, whether the consumer provided consent, the method by which the complaint was submitted, 
 and the date the complaint was sent to the consumer.
 
-
-1)
-list out top 10 to 20 queries
-features ? ex: complaint_status 
-
-2) 
-10 Q -->numeric (simple)
-next 5 ---> (moderate)
-15 to 20 --> (hard)
-
-3)
-distribute the above 3 approaches on different models
-
-Initlally go with one table --> gradually add tables and increase the complexity
-
-
